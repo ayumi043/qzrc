@@ -1,0 +1,17 @@
+<div class="row" style="margin-left:0px;margin-top: 16px;">
+  <%= render 'navbar' %>
+  <div class="span6" style="margin-left: 0px">
+  <ul>
+  <% @companys.each do |company| %>
+    <li>
+      <h5>
+        <%= link_to :controller => 'companys', :action => 'show', :id => company.id do %>
+          <%= params[:search_txt] ? hight_light(company.name, params[:search_txt]) : (sanitize company.name) %>
+        <% end %>
+      </h5>
+    </li>
+  <% end %>
+  </ul>
+  <p><%= paginate @companys %></p>
+</div>
+<div class="clearfix"></div>

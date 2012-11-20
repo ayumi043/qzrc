@@ -1,0 +1,11 @@
+<% content_for :breadcrumbs do %>
+  <ul class="breadcrumb">
+    <li><a href="/">首页</a> <span class="divider">/</span></li>
+    <li>搜索“<%= params[:search_txt] %>”的结果</li>
+  </ul>
+<% end %>
+
+<div class="btn-group">
+  <button class="btn<%= action_active("index") %>"><a href="/search/?search_txt=<%= params[:search_txt] %>">按职位</a></button>
+  <button class="btn<%= action_active("company") %>"><a href="/search/company?search_txt=<%= params[:search_txt] %>">按公司</a></button>
+</div>

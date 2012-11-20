@@ -1,0 +1,18 @@
+<% content_for :breadcrumbs do %>
+  <ul class="breadcrumb">
+    <li><a href="/">首页</a> <span class="divider">/</span></li>
+    <li><a href="/jobs">职位</a> <span class="divider">/</span></li>
+    <li class="active"><%=@job.name %></li>
+  </ul>
+<% end %>
+
+<h4><%=@job.name %></h4>
+<p>
+    views_count:<%= @job.views_count_s %> <br>
+    visit: <%= @job.visit %>
+  </p>
+
+<h7><%=@job.description %></h7>
+<hr>
+<%= link_to '返回', jobs_path %>
+<hr>

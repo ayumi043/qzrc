@@ -1,0 +1,8 @@
+<ul>
+<% @companys.each do | company| %>
+  <li>
+  	<h5><%= link_to "#{sanitize company.name}", :controller => 'companys', :action => 'show', :id => company.id %></h5>
+  </li>
+<% end %>
+</ul>
+<p><%= paginate @companys %></p>

@@ -1,0 +1,42 @@
+<% content_for :style do %>
+  <style type="text/css">
+  </style>
+<% end %>
+
+<div class="row" style="margin-left:0px;margin-top: 16px;">
+  <%= render 'navbar' %>
+  <div class="span6" style="margin-left: 0px">
+    <ul>
+      <% @jobs.each do |job| %>
+        <li>
+          <h5><%= link_to :controller => 'jobs', 
+              :action => 'show', :id => job.id do %>
+                <% if params[:search_txt] %>
+                  <%=raw job.name.gsub(/#{params[:search_txt]}/, "<span style='color:#fff;background:yellow'>#{params[:search_txt]}</span>") %>
+                <% else %>  
+                  <%= sanitize job.name %>
+                <% end %>
+              <% end %>
+          </h5>
+          <span><%= sanitize job.company.name %></span>
+        </li>
+      <% end %>
+    </ul>
+    <p><%= paginate @jobs %></p>
+  </div>
+
+  <div class="span3 bs-docs-sidebar" style="float: right">
+    <h4>热门职位</h4>
+    <ul class="nav nav-list bs-docs-sidenav">
+      <% @top_jobs.each do |job| %>
+        <li>
+          <a href="<%= "/jobs/#{job.id}" %>"><%=sanitize job.name %><i class="icon-chevron-right"></i></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+</div>
+
+  
+
