@@ -1,8 +1,11 @@
-<h5><%= sanitize @company.name %></h5>
+<h3 style="text-align: center"><%= sanitize @company.name %></h3>
 <p>该公司的职位</p>
 <ul>
   <% @company.jobs.each do |job|  %>
-    <li><%= link_to job.name, job %></li>
+    <li>
+      <p><%= link_to job.name, job %></p>
+      <p><%= job.description %></p>
+    </li>
   <% end %>  
 </ul>
 <%= link_to '返回', :controller => 'companys', :action => 'index' %>

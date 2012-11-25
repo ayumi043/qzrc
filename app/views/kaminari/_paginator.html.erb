@@ -9,7 +9,7 @@
 <%= paginator.render do -%>
   <% if current_page < 4 %>
     <% Kaminari.configure { |config| config.window = 10 - current_page.to_i  } %>
-    <%= current_page.to_i %>
+    <%#= current_page.to_i %>
   <% else %>  
     <% Kaminari.configure { |config| config.window = 4 } %>
   <% end %> 

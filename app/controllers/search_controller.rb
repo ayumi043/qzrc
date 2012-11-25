@@ -1,14 +1,19 @@
 class SearchController < ApplicationController
   def index
     # pry
-    @jobs = Job.where("name like ? ","%#{params[:search_txt]}%")
-               .includes(:company)
-               .page(params[:page]).per(30)
+    # @jobs = Job.where("name like ? ","%#{params[:search_txt]}%")
+    #            .includes(:company)
+    #            .page(params[:page]).per(30)
 
-    @top_jobs = Job.all(:conditions => ['visit > 0'],
-                        :order => ['visit DESC'],
-                        :limit => 5).uniq
-               
+    @jobs = Job.search params[:search_txt],
+        :field_weights => {:name => 20},
+        :include => :company,
+        :match_mode => :boolean,
+        :order => :name,
+        :sort_mode => :desc,
+        :page => (params[:page] || 1),
+        :per_page => 15
+
     #render 'jobs/index'
   end
 
@@ -16,8 +21,8 @@ class SearchController < ApplicationController
     @companys = Company.where("name like ? ","%#{params[:search_txt]}%")
                        .page(params[:page]).per(30)
 
-    @top_jobs = Job.all(:conditions => ['visit > 0'],
-                        :order => ['visit DESC'],
+    @top_jobs = Job.all(:conditions => ['views_count > 0'],
+                        :order => ['views_count DESC'],
                         :limit => 5).uniq                   
   end
 

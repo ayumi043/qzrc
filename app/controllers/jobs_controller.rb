@@ -3,8 +3,8 @@ class JobsController < ApplicationController
     # @listings = Listing.page(params[:page]).per(params[:page].to_i == 1 ? 100 : 25)
     @jobs = Job.includes(:company).page(params[:page]).per(15)
     
-    @top_jobs = Job.all(:conditions => ['visit > 0'],
-                        :order => ['visit DESC'],
+    @top_jobs = Job.all(:conditions => ['views_count > 0'],
+                        :order => ['views_count DESC'],
                         :limit => 5).uniq
   end 
 

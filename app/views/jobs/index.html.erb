@@ -14,14 +14,12 @@
                   <%= sanitize job.name %>
               <% end %>
           </h5>
+          <p><%= job.description %></p>
           <span><%= sanitize job.company.name %></span>
         </li>
       <% end %>
     </ul>
-    <p><%= paginate @jobs %></p>
-    <p><%#= page_entries_info @jobs %></p>
   </div>
-
   <div class="span3 bs-docs-sidebar" style="float: right">
     <h4>热门职位</h4>
     <ul class="nav nav-list bs-docs-sidenav">
@@ -32,8 +30,12 @@
       <% end %>
     </ul>
   </div>
-  
 </div>
+<div>
+  <p><%= paginate @jobs %></p>
+  <p><%#= page_entries_info @jobs %></p>
+</div>
+
 
   
 
