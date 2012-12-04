@@ -30,9 +30,6 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -40,7 +37,7 @@ gem 'jquery-rails'
 gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'debugger'
 
 group :test do
   # Pretty printed test output
@@ -64,3 +61,14 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 
 
 gem 'thinking-sphinx'
+
+gem 'pry'
+gem 'pry-remote'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-douban-oauth2'
+gem 'omniauth-identity'
+
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'

@@ -52,6 +52,12 @@
               >
               <%= link_to "企业", companys_path %></li>
           </ul>
+          <span>欢迎您，<%= flash[:notice] || session[:nickname] %><span>
+          <span>
+            <% if session[:nickname] %>
+              <a href="/session/destroy">退出</a>
+            <% end %>  
+          </span>  
           <form class="navbar-form pull-right form-search" style="margin-right: 15px;" action="/search/">
             <div class="input-append">
               <input type="text" class="span2 search-query" name="search_txt" placeholder="请输入职位或公司名称">
