@@ -47,8 +47,8 @@ namespace :dev do
 	  require 'nokogiri'
 		require 'open-uri'
 
-    Company.find(12,13).each do |company|
-		# Company.find(:all).each do |company|
+    # Company.find(12,13).each do |company|
+		Company.find(:all).each do |company|
       begin
   			@doc = Nokogiri::HTML(open("http://www.qzrc.com/CompanyDetail.aspx?id=#{company.sid}"),nil,"utf-8")
   			#a_name = @doc.css(".a333 a").first.attr('href').delete "#"
@@ -56,8 +56,8 @@ namespace :dev do
   				a_name = item.attr('href').delete "#"
   				puts a_name +"  #{company.id}"
   				description = @doc.css("a[name='#{a_name}'] ~ div[class='sm'] ~ div").first.text()
-  				#job = Job.new(:name => item.text(),:description => description,:company_id => company.id)
-  				#puts job.save!
+  				job = Job.new(:name => item.text(),:description => description,:company_id => company.id)
+  				puts job.save!
   				puts description.force_encoding('utf-8')
   				puts a_name
   			end	

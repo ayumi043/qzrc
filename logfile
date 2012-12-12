@@ -15,3 +15,11 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2012-12-10 11:26:57 CST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  syntax error at or near "from" at character 20
+STATEMENT:  SELECT id,name,sid,from,description,created_at,updated_at FROM public.companies
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+STATEMENT:  SELECT COUNT(*) FROM public.identities
+ERROR:  syntax error at or near "from" at character 20
+STATEMENT:  SELECT id,name,sid,from,description,created_at,updated_at FROM public.companies
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+STATEMENT:  SELECT COUNT(*) FROM public.identities
