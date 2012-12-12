@@ -1,18 +1,21 @@
 class SearchController < ApplicationController
   def index
     # pry
-    # @jobs = Job.where("name like ? ","%#{params[:search_txt]}%")
-    #            .includes(:company)
-    #            .page(params[:page]).per(30)
 
-    @jobs = Job.search params[:search_txt],
-        :field_weights => {:name => 20},
-        :include => :company,
-        :match_mode => :boolean,
-        :order => :name,
-        :sort_mode => :desc,
-        :page => (params[:page] || 1),
-        :per_page => 15
+    # @tasks = Task.find(:all, :conditions=> [ "name LIKE ?", "%#{params[:query]}%" ]
+      
+    @jobs = Job.where("name like ? ","%#{params[:search_txt]}%")
+               .includes(:company)
+               .page(params[:page]).per(15)
+
+    # @jobs = Job.search params[:search_txt],
+    #     :field_weights => {:name => 20},
+    #     :include => :company,
+    #     :match_mode => :boolean,
+    #     :order => :name,
+    #     :sort_mode => :desc,
+    #     :page => (params[:page] || 1),
+    #     :per_page => 15
 
     #render 'jobs/index'
   end

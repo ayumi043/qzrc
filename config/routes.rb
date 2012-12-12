@@ -12,9 +12,13 @@ Qzrc::Application.routes.draw do
   #   resources :events
   # end
 
-  match "/auth/:provider/callback", :to => 'session#create'
-
-  match 'session/destroy' => 'session#destroy'
+  # match "/auth/:provider/callback", :to => 'session#create'
+  # match 'session/destroy' => 'session#destroy'
+  match "/auth/:provider/callback", to: "sessions#create"
+  match "/auth/failure", to: "sessions#failure"
+  match "/logout", to: "sessions#destroy", :as => "logout"
+  resources :identities
+  
 
   match 'c/:id/' => 'companys#show', :as => :show
   get 'c/' => 'companys#index'

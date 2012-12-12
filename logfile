@@ -1,3 +1,17 @@
 LOG:  database system was shut down at 2012-12-04 22:57:36 CST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was interrupted; last known up at 2012-12-05 00:31:06 CST
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/18E8E68
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-12-10 11:26:57 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

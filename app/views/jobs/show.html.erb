@@ -6,7 +6,10 @@
   </ul>
 <% end %>
 
-<h4><%=@job.name %></h4>
+<% title "#{@job.name } - 详细职位" %>
+
+
+<h4><%= @job.name %></h4>
 <p>
     views_count:<%= @job.views_count_s %> <br>
     visit: <%= @job.visit %>
@@ -15,4 +18,5 @@
 <h7><%=@job.description %></h7>
 <hr>
 <%= link_to '返回', jobs_path %>
+
 <hr>
