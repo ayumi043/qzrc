@@ -1,5 +1,6 @@
 Qzrc::Application.routes.draw do
-  
+
+
   get "search/index"
 
   resources :companys
@@ -12,10 +13,16 @@ Qzrc::Application.routes.draw do
   #   resources :events
   # end
 
-  # match "/auth/:provider/callback", :to => 'session#create'
-  # match 'session/destroy' => 'session#destroy'
+
+  match "jobs/:year/:month", to: "jobs#archive", :as => "job_archive"   
+  #以下是rails 2的写法
+  #map.job_archive 'jobs/:year/:month', :controller => 'jobs', :action => 'archive'
+
+
+  match "/acount/new", to: "sessions#new"
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
+  match "/auth/:provider/failure", to: "sessions#new"
   match "/logout", to: "sessions#destroy", :as => "logout"
   resources :identities
   
@@ -23,7 +30,7 @@ Qzrc::Application.routes.draw do
   match 'c/:id/' => 'companys#show', :as => :show
   get 'c/' => 'companys#index'
 
-  get "home/index"
+  get "home/index" 
 
   
   # The priority is based upon order of creation:
@@ -76,7 +83,8 @@ Qzrc::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  root :to => 'home#index'
+  # root :to => 'home#index'
+  root :to => 'jobs#index'
 
   # See how all your routes lay out with "rake routes"
 

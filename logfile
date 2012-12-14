@@ -23,3 +23,49 @@ ERROR:  syntax error at or near "from" at character 20
 STATEMENT:  SELECT id,name,sid,from,description,created_at,updated_at FROM public.companies
 ERROR:  current transaction is aborted, commands ignored until end of transaction block
 STATEMENT:  SELECT COUNT(*) FROM public.identities
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (5, 营业员（泉州万达超市店） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.928347, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 5
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (1, 营业员（晋江陈埭） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.908587, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 1
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (1, 营业员（晋江陈埭） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.908587, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 1
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (1, 营业员（晋江陈埭） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.908587, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 1
+ERROR:  null value in column "updated_at" violates not-null constraint
+DETAIL:  Failing row contains (1, 营业员（晋江陈埭） [普], 
+	                            岗位要求：1、女/男，18―..., null, 3, 0, 2012-11-19 16:57:46.908587, null, 0).
+STATEMENT:  UPDATE "jobs" SET "updated_at" = NULL WHERE "jobs"."id" = 1
+ERROR:  relation "job" does not exist at character 8
+STATEMENT:  update job set updated_at = 'a' where id = 1 
+ERROR:  invalid input syntax for type timestamp: "a" at character 30
+STATEMENT:  update jobs set updated_at = 'a' where id = 1 
+ERROR:  invalid input syntax for type timestamp: "1000" at character 30
+STATEMENT:  update jobs set updated_at = '1000' where id = 1 

@@ -4,8 +4,25 @@ class Job < ActiveRecord::Base
 
   # stringify_time :updated_at
 
+  # def due_at_string
+  #   due_at.to_s(:db)
+  # end
+
+  # def due_at_string=(due_at_str)
+  #   self.due_at = Time.parse(due_at_str)
+  # rescue ArgumentError
+  #   @due_at_invalid = true
+  # end
+
+  # def validate
+  #   errors.add(:updated_at, "is invalid") if @updated_at_invalid
+  # end
+
+  stringify_time :updated_at
+
   def validate
-    errors.add(:updated_at, "is invalid") if @updated_at_invalid
+    binding.pry
+    errors.add(:updated_at, "is invalid") if updated_at_invalid?
   end
 
   define_index do

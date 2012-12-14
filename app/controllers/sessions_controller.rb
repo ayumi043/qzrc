@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
   def new
+
   end
 
   def create
+    # binding.pry
     user = User.from_auth(request.env['omniauth.auth'])
-    binding.pry
     session[:user_id] = user.id
     session[:nickname] = "#{user.nickname}"
-    # flash[:notice] = "#{user.nickname}"
+    # flash[:notice] = "#{Signed in}"
     redirect_to "/", notice: "Signed in!"
   end
 
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    redirect_to root_url, alert: "Authentication failed, please try again."
+    # binding.pry
+    redirect_to root_url, notice: "Authentication failed, please try again."
   end
 end

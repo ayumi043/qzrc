@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
 <% @companys.each do | company| %>
   <li>
   	<h5><%= link_to "#{sanitize company.name}", :controller => 'companys', :action => 'show', :id => company.id %></h5>
@@ -9,5 +9,23 @@
     </p>
   </li>
 <% end %>
-</ul>
+</ul> -->
+
+<table>
+<% @companys.in_groups_of(3, false) do |row_companys| %>
+  <tr>
+    <% for company in row_companys %>
+      <td valign="top" style="width:290px;">
+        <%= link_to "#{sanitize company.name}", :controller => 'companys', :action => 'show', :id => company.id %>
+        <p>
+          <% company.jobs.each do |job| %>
+            <span><%= job.name %></span>
+          <% end %>
+        </p>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
 <p><%= paginate @companys %></p>

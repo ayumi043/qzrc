@@ -55,8 +55,8 @@ namespace :dev do
   			@doc.css(".a333 a").each do |item|
   				a_name = item.attr('href').delete "#"
   				puts a_name +"  #{company.id}"
-  				description = @doc.css("a[name='#{a_name}'] ~ div[class='sm'] ~ div").first.text().to_s.force_encoding('utf-8')
-  				job = Job.new(:name => item.text().to_s.force_encoding('utf-8'),:description => description.to_s.force_encoding('utf-8'),:company_id => company.id)
+  				description = @doc.css("a[name='#{a_name}'] ~ div[class='sm'] ~ div").first.text()
+  				job = Job.new(:name => item.text(),:description => description,:company_id => company.id)
   				puts job.save!
   				puts description.force_encoding('utf-8')
   				puts a_name
