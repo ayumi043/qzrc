@@ -69,3 +69,11 @@ ERROR:  invalid input syntax for type timestamp: "a" at character 30
 STATEMENT:  update jobs set updated_at = 'a' where id = 1 
 ERROR:  invalid input syntax for type timestamp: "1000" at character 30
 STATEMENT:  update jobs set updated_at = '1000' where id = 1 
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-12-30 11:08:41 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

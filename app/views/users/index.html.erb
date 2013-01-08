@@ -1,0 +1,6 @@
+<h4>用户列表</h4>
+<ul>
+  <% @users.each do |user| %>
+    <li>昵称：<%= user.nickname %>[<%= user.email %>]</li>
+  <% end %>    
+</ul>

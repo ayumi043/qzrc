@@ -13,17 +13,24 @@ Qzrc::Application.routes.draw do
   #   resources :events
   # end
 
+  resources :users
+
+  get 'upload' => 'uploads#index'
+  post 'upload' => 'uploads#upload'
+
 
   match "jobs/:year/:month", to: "jobs#archive", :as => "job_archive"   
   #以下是rails 2的写法
   #map.job_archive 'jobs/:year/:month', :controller => 'jobs', :action => 'archive'
 
 
-  match "/acount/new", to: "sessions#new"
+  match "/acount/login", to: "sessions#new", :as => "login"
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/auth/:provider/failure", to: "sessions#new"
   match "/logout", to: "sessions#destroy", :as => "logout"
+
+  match "/identities/new", :as => "register"
   resources :identities
   
 

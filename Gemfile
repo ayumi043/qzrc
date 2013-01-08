@@ -70,5 +70,11 @@ gem 'omniauth-github'
 gem 'omniauth-douban-oauth2'
 gem 'omniauth-identity'
 
+
+gem 'carrierwave'
+gem 'rmagick'
+gem 'mime-types'
+
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

@@ -37,11 +37,6 @@
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
         <a class="brand" href="/">泉州IT招聘</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
@@ -52,19 +47,20 @@
               >
               <%= link_to "企业", companys_path %></li>
           </ul>
-          <span>欢迎您，<%= session[:nickname] %><span>
-          <span>
-            <% if session[:nickname] %>
-              <a href="/logout">退出</a>
-              <%= link_to "退出", logout_path %>
-            <% end %>  
-          </span>  
-          <form class="navbar-form pull-right form-search" style="margin-right: 15px;" action="/search/">
+          <form class="navbar-form pull-right form-search" style="margin-right: 15px;float: right" action="/search/">
             <div class="input-append">
-              <input type="text" class="span2 search-query" name="search_txt" placeholder="请输入职位或公司名称">
+              <input type="text" class="span2 search-query" value='<%= params[:search_txt] %>' name="search_txt" placeholder="请输入职位或公司名称">
               <button type="submit" class="btn btn-primary">搜索</button>
             </div>
           </form>
+          <div style="float: right;height: 36px;line-height: 36px;margin-right: 35px;">
+            <% if session[:nickname] %>
+                欢迎您，<%= session[:nickname] %><%= link_to "退出", logout_path %>
+            <% else %>
+                <%= link_to "登录", login_path %>    
+
+            <% end %>  
+          </div>  
         </div>
         <!--/.nav-collapse --> </div>
     </div>

@@ -1,0 +1,8 @@
+<%= form_tag('/upload', :multipart => true) do %>  
+  <%= file_field_tag 'picture' %>  
+  <%= submit_tag "上传" %>
+<% end %>  
+   
+<%#= form_for @person do |f| %>  
+  <%#= f.file_field :picture %>  
+<%# end %>  
