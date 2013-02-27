@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20121224043654) do
     t.text     "description"
     t.string   "contact"
     t.integer  "company_id"
-    t.integer  "visit",       :default => 0
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.integer  "views_count", :default => 0

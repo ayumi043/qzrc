@@ -30,7 +30,6 @@ Qzrc::Application.routes.draw do
   match "/auth/:provider/failure", to: "sessions#new"
   match "/logout", to: "sessions#destroy", :as => "logout"
 
-  match "/identities/new", :as => "register"
   resources :identities
   
 

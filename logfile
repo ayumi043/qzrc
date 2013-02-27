@@ -77,3 +77,31 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2012-12-30 11:08:41 CST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+FATAL:  database "qzrc_production" does not exist
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-01-13 22:38:25 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "qzrc_production" does not exist
+FATAL:  database "qzrc_production" does not exist
+FATAL:  database "qzrc_production" does not exist
+LOG:  unexpected EOF on client connection with an open transaction
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-02-09 11:36:12 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-02-27 22:35:39 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -25,12 +25,13 @@ class User < ActiveRecord::Base
           nickname = user.nickname
         else
 
-        end  
+        end
+        return user  
       end  
 
       #豆瓣有的账号传回来可能没有包含email
 
-      locate_auth(auth) || locate_email || create_auth(auth)
+      locate_auth(auth) || locate_email(auth) || create_auth(auth)
         
     end
 
@@ -56,16 +57,16 @@ class User < ActiveRecord::Base
 
   end
 
-  def self.from_omniauth(auth)
-    find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
-  end
+  # def self.from_omniauth(auth)
+  #   find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
+  # end
 
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-    end
-  end
+  # def self.create_with_omniauth(auth)
+  #   create! do |user|
+  #     user.provider = auth["provider"]
+  #     user.uid = auth["uid"]
+  #     user.name = auth["info"]["name"]
+  #   end
+  # end
 
 end

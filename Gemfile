@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -37,7 +37,7 @@ gem 'jquery-rails'
 gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+# gem 'debugger'
 
 group :test do
   # Pretty printed test output
@@ -60,7 +60,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
 
-gem 'thinking-sphinx'
+# gem 'thinking-sphinx'
 
 gem 'pry'
 gem 'pry-remote'

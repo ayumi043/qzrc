@@ -18,6 +18,11 @@ class Job < ActiveRecord::Base
   #   errors.add(:updated_at, "is invalid") if @updated_at_invalid
   # end
 
+  def to_param
+    "#{id}-#{name}"
+    # "foo"
+  end
+
   stringify_time :updated_at
 
   def validate
@@ -25,8 +30,8 @@ class Job < ActiveRecord::Base
     errors.add(:updated_at, "is invalid") if updated_at_invalid?
   end
 
-  define_index do
-    indexes name, :sortable => true
-    indexes description, :sortable => true
-  end
+  # define_index do
+  #   indexes name, :sortable => true
+  #   indexes description, :sortable => true
+  # end
 end

@@ -987,3 +987,12 @@ form.bs-docs-example {
 .container{
   width:950px !important;
 }
+
+/* */
+.brand{float: left !important;color:#fff !important;margin-left:0px !important;}
+.userinfo{float: right;height: 36px;line-height: 36px;margin-right: 35px;}
+.form-search{margin-right: 15px;float: right}
+.jobname{padding:0px 8px 0px 8px;}
+.jobname a{color: #666 !important;}
+.jobblock{margin-bottom: 25px;padding-top: -6px;}
+.highlight{color:#fff;background:yellow}

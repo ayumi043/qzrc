@@ -1,17 +1,21 @@
-<!-- <ul>
-<% @companys.each do | company| %>
-  <li>
-  	<h5><%= link_to "#{sanitize company.name}", :controller => 'companys', :action => 'show', :id => company.id %></h5>
-    <p>
-      <% company.jobs.each do |job| %>
-        <span><%= job.name %></span>
-      <% end %>
-    </p>
-  </li>
-<% end %>
-</ul> -->
+<% title "公司" %>
 
-<table>
+<ul>
+<% @companys.each do | company| %>
+  <% if company.jobs.length > 0 %>
+    <li class="jobblock">
+    	<h5><%= link_to "#{sanitize company.name}", :controller => 'companys', :action => 'show', :id => company.id %></h5>
+      <p>
+          <% company.jobs.to_enum.with_index(1).each do |job, index| %>
+            <span class="jobname"><%= link_to "#{index.to_s}.  #{job.name}", job_path(job) %></span>
+          <% end %>
+      </p>
+    </li>
+  <% end %>  
+<% end %>
+</ul>
+
+<!-- <table>
 <% @companys.in_groups_of(3, false) do |row_companys| %>
   <tr>
     <% for company in row_companys %>
@@ -26,6 +30,6 @@
     <% end %>
   </tr>
 <% end %>
-</table>
+</table> -->
 
 <p><%= paginate @companys %></p>

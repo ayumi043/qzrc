@@ -3,16 +3,15 @@
   </style>
 <% end %>
 
-<% content_for :title do %>职位搜索<% end %>
+<% content_for :title do %><%= params[:search_txt] %> - 职位搜索<% end %>
 
 <div class="row" style="margin-left:0px;margin-top: 16px;">
   <%= render 'navbar' %>
   <div style="margin-left: 0px">
     <ul>
       <% @jobs.each do |job| %>
-        <li>
-          <h5><%= link_to :controller => 'jobs', 
-              :action => 'show', :id => job.id do %>
+        <li class="jobblock">
+          <h5><%= link_to job_path(job) do %>
                 <% if params[:search_txt] %>
                   <%=raw job.name.gsub(/#{params[:search_txt]}/im, "<span style='color:#fff;background:yellow'>#{params[:search_txt]}</span>") %>
                 <% else %>  
