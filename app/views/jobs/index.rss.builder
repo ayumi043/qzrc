@@ -16,7 +16,7 @@ xml.rss :version => "2.0" do
         xml.pubDate job.updated_at.to_s(:updated_time)
         xml.link job_path(job)
         # xml.link formatted_article_url(article, :rss)
-        xml.guid ob_path(job)
+        xml.guid job_path(job)
       end
     end
   end
