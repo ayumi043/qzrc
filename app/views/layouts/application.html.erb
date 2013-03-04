@@ -7,15 +7,12 @@
   <meta name="description" content="泉州IT招聘">
   <meta name="author" content="泉州IT招聘">
   <%= csrf_meta_tags %>
-  <!-- Le styles -->
-  <link href="/css/bootstrap.css" rel="stylesheet">
-  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="/css/docs.css" rel="stylesheet">
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= yield :style %>
 </head>
 
@@ -66,10 +63,5 @@
     </footer>
   </div>
 
-  <!-- Le javascript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <%#= stylesheet_link_tag    "application", :media =>
-  "all" %>
-  <%= javascript_include_tag "application" %></body>
+  </body>
 </html>
