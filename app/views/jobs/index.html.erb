@@ -3,7 +3,7 @@
   </style>
 <% end %>
 
-<% title "最新职位" %>
+<% title "最新职位1" %>
 
 <div>
   <%= link_to "RSS Feed", jobs_path(:rss) %>
@@ -41,6 +41,6 @@
 </div>
 <div>
   <p><%= paginate @jobs %></p>
-  <p><%#= page_entries_info @jobs %></p>
+  <p><%= page_entries_info @jobs %></p>
 </div>
 

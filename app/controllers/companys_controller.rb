@@ -1,4 +1,5 @@
 class CompanysController < ApplicationController
+  # caches_page :index
 
   def index
     @companys = Company.page(params[:page]).per(15)
