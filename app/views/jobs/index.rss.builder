@@ -13,7 +13,7 @@ xml.rss :version => "2.0" do
       xml.item do
         xml.title job.name
         xml.description job.description
-        xml.pubDate job.updated_at.to_s(:updated_time)
+        xml.pubDate job.updated_at.to_s(:rfc822)
         xml.link job_path(job)
         # xml.link formatted_article_url(article, :rss)
         xml.guid job_path(job)

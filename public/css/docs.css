@@ -996,3 +996,7 @@ form.bs-docs-example {
 .jobname a{color: #666 !important;}
 .jobblock{margin-bottom: 25px;padding-top: -6px;}
 .highlight{color:#fff;background:yellow}
+/**/
+.navbar a,.brand,.btn{color:#999 !important;}
+.search-query{background-color: #eaeaea !important}
+.active a{color:#fff !important;}

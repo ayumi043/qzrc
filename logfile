@@ -105,3 +105,11 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2013-02-27 22:35:39 CST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-03-03 12:10:22 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

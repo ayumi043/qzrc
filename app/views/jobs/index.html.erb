@@ -19,7 +19,6 @@
               :action => 'show', :id => job.id do %>
                   <%= sanitize job.name %>
               <% end %>
-              <%= link_to (sanitize job.name), job_path(job) %>
           </h5>
           <p><%= job.updated_at.to_s(:updated_time) %></p>
           <p>创建于：<%= job.created_at.to_s(:db) %></p>
@@ -44,7 +43,4 @@
   <p><%= paginate @jobs %></p>
   <p><%#= page_entries_info @jobs %></p>
 </div>
-
-
-  
 
